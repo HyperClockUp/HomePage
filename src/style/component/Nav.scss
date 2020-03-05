@@ -1,0 +1,50 @@
+.nav{
+    font-family: "Microsoft YaHei";
+    margin: 0 auto;
+    display: flex;
+    justify-content:flex-end;
+    &-item{
+        height: auto;
+        text-align: center;
+        font-size: 0;
+        padding: 0.1rem;
+        margin-right:0.1rem;
+        &-text{
+            display: inline-block;
+            min-width: 0.2rem;
+            font-size: 0.14rem;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.5s ease-in-out transform;
+            &:visited{
+                color: inherit;
+            }
+            &::after{
+                content: "";
+                width: 0;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                background-color: black;
+                transition: 0.5s ease width,0.5s ease left;
+                z-index: 9;
+            }
+            &:hover::after{
+                width: 100%;
+                left: 0;
+            }
+        }
+        .active{
+            transform: scale(1.1);
+            font-weight: bold;
+            &::after{
+                height: 2px;
+                width: 100%;
+                left: 0;
+            }
+        }
+
+    }
+}
